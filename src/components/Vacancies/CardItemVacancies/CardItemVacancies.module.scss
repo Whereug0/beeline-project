@@ -1,0 +1,130 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border: 1px solid rgba(131, 145, 161, 1);
+  padding: 25px 30px;
+  border-radius: 20px;
+  background-color: rgba(232, 232, 232, 1);
+  color: black;
+  .vacancy_wrapp{
+    display: flex;
+    align-items: center;
+    .vacancy_name{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      p{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .description{
+    font-size: 20px;
+  }
+}
+
+
+.conditions_wrapp{
+  display: flex;
+  justify-content: space-between;
+  .salary{
+    color: rgba(47, 102, 246, 1);
+    span{
+      color: black;
+    }
+  }
+  .conditions{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  button{
+    background: rgba(255, 204, 51, 1);
+    border: none;
+    cursor: pointer;
+    // padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 45%;
+  }
+}
+
+@media (max-width: 950px) {
+  .conditions_wrapp{
+    button{
+      height: 50px;
+      font-size: 13.5px;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .conditions_wrapp{
+    align-items: center;
+    button{
+      // font-size: 15px;
+      padding: 10px;
+      width: 45%;
+      height: 50px;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .conditions_wrapp{
+
+    button{
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .conditions_wrapp{
+    button{
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .card{
+    padding: 15px;
+    .vacancy_wrapp{
+      .bagImg{
+        width: 40px;
+        height: 40px;
+      }
+      .vacancy_name{
+        h1{
+          font-size: 1em;
+        }
+        p{
+
+          font-size: 1em;
+        }
+      }
+    }
+    .description{
+      font-size: 12px;
+    }
+  }
+  .conditions_wrapp{
+    .conditions{
+      font-size: 12px;
+    }
+    button{
+      font-size: 12px;
+      height: 35px;
+      
+    }
+  }
+}

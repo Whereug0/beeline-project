@@ -1,0 +1,138 @@
+.container{
+  padding-top: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(28, 27, 27, 1);
+}
+.content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1440px;
+  padding: 0 20px;
+}
+
+.lists_wrapp{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    li{
+      color: rgba(131, 145, 161, 1);
+      font-size: 18px;
+    }
+    margin-bottom: 100px;
+  }
+}
+
+
+.media_wrapp{
+  display: flex;
+  gap: 30px;
+}
+
+.media_contacts{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  .contacts_wrapp{
+    display: flex;
+    gap: 50px;
+  }
+  .contact{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p{
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 26px;
+}
+.icon{
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 1000px){
+  .media_contacts{
+    .contacts_wrapp{
+      gap: 20px;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .lists_wrapp{
+    gap: 10px;
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h2{
+        font-size: 1.2em;
+      }
+      li{
+        color: rgba(131, 145, 161, 1);
+        font-size: 15px;
+      }
+      margin-bottom: 100px;
+    }
+  }
+
+  .media_contacts{
+    align-items: center;
+    gap: 40px;
+    flex-direction: column;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  .lists_wrapp{
+    gap: 10px;
+    flex-direction: column;
+    ul{
+      text-align: center;
+    }
+  }
+
+  .media_contacts{
+    .contacts_wrapp{
+      font-size: 0.8em;
+    }
+    .contact{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      p{
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .media_contacts{
+    .contacts_wrapp{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
