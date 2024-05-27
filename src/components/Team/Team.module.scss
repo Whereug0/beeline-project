@@ -32,14 +32,23 @@
   justify-content: space-between;
   margin-top: 100px;
   margin-bottom: 80px;
-
-  h1 {
+  h1{
     font-weight: 700;
-    font-size: 60px;
+    font-size: 3em;
     margin-top: 80px;
     margin-bottom: 35px;
-    margin-bottom: 35px;
-    border-bottom: 8px solid rgba(255, 204, 51, 1);
+    position: relative;
+  }
+  .line {
+    z-index: -5;
+    position: absolute;
+    top: 65%; /* Вертикально центрирует линию относительно заголовка */
+    left: -2%;
+    right: 0;
+    margin: auto; /* Центрирует линию горизонтально */
+    background-color: rgba(255, 204, 51, 1);
+    width: 104%; /* Ширина линии относительно контейнера */
+    height: 14px; /* Фиксированная высота линии */
   }
 }
 .ball {
@@ -82,13 +91,15 @@
     h1{
       margin-top: 20px;
       font-size: 1.5em;
-      border-bottom: 6px solid rgba(255, 204, 51, 1);
     }
 
   }
 }
 
 @media (max-width:780px) {
+  .content{
+    margin-bottom: 50px;
+  }
   .heading{
     margin: 10px 0;
     align-items: center;
@@ -96,5 +107,17 @@
   .stars {
     width: 50%;
     margin-top: 20px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .heading {
+    h1 {
+      font-size: 1.5em;
+    }
+    .line{
+      height: 10px;
+    }
   }
 }

@@ -12,8 +12,6 @@ import {ROUTES} from '../../utils/routes'
 const Vacancies = () => {
   const {data: vacancies, isLoading, error} = useGetVacanciesQuery()
 
-
-
   useEffect(() => {
     Aos.init({duration:2000});
   },[])
@@ -23,7 +21,11 @@ const Vacancies = () => {
       <div className={styles.content}>
         <div className={styles.heading} data-aos="zoom-in-down">
           <h1>
-            Найди работу вместе с<span>Beeline</span>
+            Найди работу вместе с
+            <span>
+              Beeline
+              <div className={styles.line}/>
+            </span>
           </h1>
         </div>
         <div className={styles.cards_wrapp}>

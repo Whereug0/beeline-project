@@ -20,6 +20,7 @@
     }
   }
   .links{
+    justify-content: center;
     display: flex;
     width: 100%;
     gap: 66px;
@@ -29,14 +30,13 @@
     max-width: 1440px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    // background: rgba(18, 18, 18, 1);;
     .navMenu {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: 90px;
+      padding-right: 45px;
     } 
   }
 }

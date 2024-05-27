@@ -19,7 +19,10 @@ const Missions = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.heading} data-aos='zoom-in-down'>
-          <h1>Наша миссия</h1>
+          <h1>
+            Наша миссия
+            <div className={styles.line}/>
+          </h1>
           <span>
             Делая связь частью жизни, мы открываем доступ к информации, общению
             и даем кыргызстанцам безграничные возможности для развития страны и

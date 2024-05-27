@@ -14,8 +14,8 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <MySwiper />
-      <Values />
       <Missions />
+      <Values />
       <Team />
       <WhyWe />
       <Vacancies />

@@ -20,7 +20,10 @@ const WhyWe = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.heading} data-aos="zoom-in-down">
-          <h1>Почему мы?</h1>
+          <h1>
+            Почему мы?
+            <div className={styles.line}/>
+          </h1>
         </div>
         <div className={styles.cards_wrapp}>
           <div className={styles.card} data-aos="flip-up">

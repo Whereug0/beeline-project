@@ -11,14 +11,6 @@ const Modal = ({ active, setActive, close}) => {
         </div>
         <h2>Заявка на вакансию</h2>
         <div className={styles.input_wrapp}>
-          <label htmlFor="city">Город вакансии</label>
-          <input type="text" id='city'/>
-        </div>
-        <div className={styles.input_wrapp}>
-          <label htmlFor="vacancy">Вакансия</label>
-          <input type="text" id='vacancy'/>
-        </div>
-        <div className={styles.input_wrapp}>
           <label htmlFor="name">ФИО</label>
           <input type="text" id='name'/>
         </div>

@@ -22,11 +22,14 @@ const Header = () => {
         <div className={styles.logo}>
           <BeelineIcon className={styles.icon} />
         </div>
+
         <div className={styles.navMenu}>
           <ul className={styles.links}>
             <li>
               <NavLink
-                className={({isActive}) => `${styles.link} ${isActive ? styles.active : ""}`}
+                className={({ isActive }) =>
+                  `${styles.link} ${isActive ? styles.active : ""}`
+                }
                 to={ROUTES.HOME}
               >
                 Главная
@@ -34,7 +37,9 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                className={({isActive}) => `${styles.link} ${isActive ? styles.active : ""}`}
+                className={({ isActive }) =>
+                  `${styles.link} ${isActive ? styles.active : ""}`
+                }
                 to={ROUTES.VACANCIES}
               >
                 Вакансии
@@ -42,7 +47,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <button className={styles.loginBtn}>Войти</button>
       </nav>
     </header>
   );

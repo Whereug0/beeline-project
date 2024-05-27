@@ -12,6 +12,7 @@ const CardItemMissions = ({img, text}) => {
   }, []);
 
   return (
+    
     <Tilt data-tilt data-tilt-scale='0.5'>
       <div className={`${styles.card} ${styles.rgb}`} data-aos="flip-up">
         <img src={img} alt="img" />

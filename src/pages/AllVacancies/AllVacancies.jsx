@@ -11,7 +11,7 @@ const AllVacancies = () => {
   const { data: vacancies, isLoading, error } = useGetVacanciesQuery();
   const { data: locations, isLoading: locationIsLoading, error: locationError} = useGetLocationsQuery()
   const { data: categories, } = useGetCategoriesQuery()
-  console.log(categories)
+  console.log(vacancies)
 
   const toggleActive = (listName) => {
     setActiveList(activeList === listName ? null : listName);
@@ -50,8 +50,8 @@ const AllVacancies = () => {
             </button>
             {activeList === "location" && (
               <div className={styles.sort_list}>
-                {locations?.results?.length > 0 ? (
-                  locations.results.map((location) => (
+                {locations?.length > 0 ? (
+                  locations.map((location) => (
                     <p key={location.id}>{location.location}</p>
                   ))
                 ): <p>Локаций нет</p>}
@@ -65,7 +65,7 @@ const AllVacancies = () => {
               }`}
               onClick={() => toggleActive("specialization")}
             >
-              Специальность
+              Департаменты
               <ArrowIcon
                 className={`${styles.arrow} ${
                   activeList === "specialization" ? styles.activeArrow : ""
@@ -74,11 +74,11 @@ const AllVacancies = () => {
             </button>
             {activeList === "specialization" && (
               <div className={styles.sort_list}>
-                {categories?.results?.length > 0 ? (
-                  categories.results.map((category) => (
-                    <p>{category.speciality}</p>
+                {categories?.length > 0 ? (
+                  categories.map((category) => (
+                    <p key={category.id}>{category.speciality}</p>
                   ))
-                ): <div>Специальности нет</div>}
+                ): <p>Департаментов нет</p>}
               </div>
             )}
           </div>

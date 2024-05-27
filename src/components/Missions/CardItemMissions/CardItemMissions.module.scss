@@ -21,18 +21,6 @@
 
 .rgb::after {
   content:"";
-  // background: linear-gradient(45deg,
-  // #ff0000 0%, 
-  // #ff9a00 10%,
-  // #d0de21 20%,
-  // #4fdc4a 30%, 
-  // #3fdad8 40%,
-  // #2fc9e2 50%, 
-  // #1c7fee 60%, 
-  // #5f15f2 70%, 
-  // #ba0cf8 80%, 
-  // #fb07d9 90%, 
-  // #ff0000 100%  )
   background: linear-gradient(45deg,
   rgb(255, 204, 51) 0%,  
   rgb(255, 204, 51) 20%,     
@@ -44,10 +32,9 @@
   repeat 0% 0% / 300% 100%;
   position: absolute;
   inset: -3px;
-
   border-radius: 16px;
   filter: blur(8px);
-  transform: translateZ(-1px); /*or z-index */
+  transform: translateZ(-2px); /*or z-index */
   animation: rgb 6s linear infinite;
 }
 

@@ -1,25 +1,36 @@
 .slide1{
-  background-image: url(../../assets/imgs/Photo1.png);
+  background-image: url(../../assets/imgs/slide1.jpg);
   border-radius: 15px;
 }
 
 .slide2{
-  background-image: url(../../assets/imgs/Photo2.png);
+  background-image: url(../../assets/imgs/slide2.jpg);
   border-radius: 15px;
 }
 .slide3{
-  background-image: url(../../assets/imgs/Photo3.png);
+  background-image: url(../../assets/imgs/slide3.jpg);
   border-radius: 15px;
 }
 .slide4{
-  background-image: url(../../assets/imgs/Photo4.png);
+  background-image: url(../../assets/imgs/slide4.jpg);
   border-radius: 15px;
 
 }
 .slide5{
-  background-image: url(../../assets/imgs/Photo5.png);
+  background-image: url(../../assets/imgs/slide5.jpeg);
   border-radius: 0px;
-
+}
+.slide6{
+  background-image: url(../../assets/imgs/slide6.jpg);
+  border-radius: 0px;
+}
+.slide7{
+  background-image: url(../../assets/imgs/slide7.jpg);
+  border-radius: 0px;
+}
+.slide8{
+  background-image: url(../../assets/imgs/slide8.jpg);
+  border-radius: 0px;
 }
 
 .swiper {
@@ -40,6 +51,7 @@
 
 .swiper-slide::after{
   content: '';
+  border-radius: 15px;
   background-image: inherit;
   background-position: bottom;
   background-size: cover;

@@ -4,10 +4,13 @@
   border: 1px solid rgba(131, 145, 161, 0.5);
   padding: 25px 25px 70px 25px;
   border-radius: 20px;
-  height: 320px;
+  height: 430px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  transform-style: preserve-3d;
+  perspective: 1000px;
   h2{
     font-size: 30px;
   }
@@ -21,7 +24,38 @@
   height: 60px;
 }
 
+.rgb::after {
+  content:"";
+  background: linear-gradient(45deg,
+  rgb(255, 204, 51) 0%,  
+  rgb(255, 204, 51) 20%,     
+    #000000 40%,     
+    #000000 60%,     
+    #ffffff 80%,    
+    rgb(255, 204, 51) 100%    
+  )
+  repeat 0% 0% / 300% 100%;
+  position: absolute;
+  inset: -3px;
+  border-radius: 16px;
+  filter: blur(8px);
+  transform: translateZ(-1px) !important; /*or z-index */
+  animation: rgb 6s linear infinite;
+}
 
+@keyframes rgb {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+
+@keyframes rgb {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
 
 @media (max-width: 1200px) {

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -9,33 +8,35 @@ import "./styles.css";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 import Aos from "aos";
-import 'aos/dist/aos.css';
-
+import "aos/dist/aos.css";
 
 import styles from "./MySwiper.module.scss";
 
 const MySwiper = () => {
-
   useEffect(() => {
-    Aos.init({duration:1000});
-  },[])
+    Aos.init({ duration: 1000 });
+  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.heading} data-aos='zoom-in-down'>
-          <h1>Работа в билайн</h1>
+        <div className={styles.heading} data-aos="zoom-in-down">
+          <h1>
+            Реализуй себя вместе с Beeline
+          <div className={styles.line}/>
+          </h1>
           <span>
-            Билайн был основан в 1992 году и стал первым Телеком-оператором на
-            российском рынке.
+            1 августа 1998 года был совершен первый звонок в GSM сети
+            Кыргызстана компанией «Бител», которая в 2009 году начала
+            предоставлять услуги под брендом Beeline.
           </span>
           <span>
-            Сейчас билайн - это почти 50 миллионов клиентов и 27 тысяч
-            сотрудников
+            В 2010 году компания вошла в группу VEON Ltd, предоставляющую
+            телекоммуникационные услуги в различных странах.
           </span>
         </div>
         <Swiper
-          data-aos='flip-up'
+          data-aos="flip-up"
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -56,33 +57,30 @@ const MySwiper = () => {
           modules={[EffectCoverflow, Pagination, Autoplay]}
           className="mySwiper"
         >
+          <SwiperSlide className="slide6">
+            <div />
+          </SwiperSlide>
+          <SwiperSlide className="slide7">
+            <div />
+          </SwiperSlide>
+          <SwiperSlide className="slide8">
+            <div />
+          </SwiperSlide>
           <SwiperSlide className="slide1">
-            <div /> 
+            <div />
           </SwiperSlide>
           <SwiperSlide className="slide2">
-            <div /> 
+            <div />
           </SwiperSlide>
           <SwiperSlide className="slide3">
-            <div /> 
+            <div />
           </SwiperSlide>
           <SwiperSlide className="slide4">
-            <div /> 
+            <div />
           </SwiperSlide>
           <SwiperSlide className="slide5">
-            <div /> 
+            <div />
           </SwiperSlide>
-          {/* <SwiperSlide>
-            <img src={photo2} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo4} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo5} />
-          </SwiperSlide> */}
         </Swiper>
       </div>
     </div>
