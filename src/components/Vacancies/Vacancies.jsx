@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Vacancies.module.scss";
-import searchIcon from "../../assets/icons/search.svg";
 import CardItemVacancies from "./CardItemVacancies/CardItemVacancies";
 import { useGetVacanciesQuery } from "../../features/api/getApiSlice";
 
@@ -36,7 +35,7 @@ const Vacancies = () => {
                 title={vacancy.title}
                 salary={vacancy.salary}
                 description={vacancy.description}
-                location={vacancy.location}
+                location={vacancy.location.location}
                 format={vacancy.format}
                 type={vacancy.job_type}
               />

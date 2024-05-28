@@ -35,16 +35,25 @@
   width: 500px;
   color: white;
   gap: 20px;
+  h2{
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .modal__content__active{
   transform: scale(1);
 }
 .input_wrapp{
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  p{
+    color: red;
+  }
   input, textarea{
+    width: 100%;
     background: rgba(255, 255, 255, 0.05);
     border: none;
     border-radius: 12px;
@@ -73,7 +82,6 @@
   justify-content: flex-end;
   margin-left: 10px;
 }
-
 
 
 @media (max-width: 780px) {

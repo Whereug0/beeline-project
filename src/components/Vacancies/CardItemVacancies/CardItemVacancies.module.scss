@@ -7,6 +7,7 @@
   border-radius: 20px;
   background-color: rgba(232, 232, 232, 1);
   color: black;
+  height: 400px;
   .vacancy_wrapp{
     display: flex;
     align-items: center;
@@ -24,8 +25,13 @@
     }
   }
 
-  .description{
+  .description {
     font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Количество строк, после которых добавляется многоточие */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -54,6 +60,21 @@
     font-weight: 600;
     width: 45%;
   }
+}
+@media (max-width: 1300px) {
+  .card{
+    .vacancy_wrapp{
+      .vacancy_name{
+        h1{
+          font-size: 1.5em;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
 }
 
 @media (max-width: 950px) {
@@ -96,6 +117,7 @@
 
 @media (max-width: 450px) {
   .card{
+    height: 280px;
     padding: 15px;
     .vacancy_wrapp{
       .bagImg{
@@ -104,10 +126,6 @@
       }
       .vacancy_name{
         h1{
-          font-size: 1em;
-        }
-        p{
-
           font-size: 1em;
         }
       }

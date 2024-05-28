@@ -105,14 +105,14 @@
 
 .all{
   background-color: rgba(255, 204, 51, 1);
-  width: 220px;
+  width: 300px;
   color: black;
   font-size: 30px;
   height: 100%;
   border-radius: 30px;
   text-align: center;
   font-weight: 600;
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 
@@ -135,6 +135,13 @@
   }
 }
 
+@media (max-width:1000px) {
+  .cards_wrapp{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+}
 
 @media (max-width:900px) {
   .heading{
@@ -168,10 +175,9 @@
       font-size: 15px;
     }
   }
-  .cards_wrapp{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
+  .all {
+    font-size: 20px;
+    width: 220px;
   }
 }
 

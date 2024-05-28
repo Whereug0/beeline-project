@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./styles.module.scss";
 import clsx from "clsx";
+import { ROUTES } from "../../utils/routes";
 
 const BurgerMenu = (props) => {
   const { isActiveBurgerMenu, setIsActiveBurgerMenu } = props;
@@ -17,12 +18,27 @@ const BurgerMenu = (props) => {
 
   return (
     <nav className={navMenuClasses}>
-      <ul className={styles["nav-menu__list"]}>      
-          <li>Тарифы</li>
-          <li>Услуги</li>
-          <li>Пополнение</li>
-          <li>Роуминг</li>
-          <li>Работа</li>
+      <ul className={styles["nav-menu__list"]}>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `${styles.link} ${isActive ? styles.active : ""}`
+            }
+            to={ROUTES.HOME}
+          >
+            Главная
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `${styles.link} ${isActive ? styles.active : ""}`
+            }
+            to={ROUTES.VACANCIES}
+          >
+            Вакансии
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

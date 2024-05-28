@@ -71,9 +71,9 @@
   position: absolute;
   bottom: -42%;
   background: linear-gradient(
-    rgba(18, 18, 18, 0), 
-    rgba(18, 18, 18, 1),
-    rgba(18, 18, 18, 1))
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1))
 }
 
 @media (max-width: 1200px) {
@@ -82,14 +82,14 @@
   }
   .swiper-slide::before{
     background: linear-gradient(
-      rgba(18, 18, 18, 0), 
-      rgba(18, 18, 18, 0.3),
-      rgba(18, 18, 18, 0.5),
-      rgba(18, 18, 18, 0.6),
-      rgba(18, 18, 18, 0.7),
-      rgba(18, 18, 18, 0.8),
-      rgba(18, 18, 18, 0.9),
-      rgba(18, 18, 18, 1));
+      rgba(0, 0, 0, 0), 
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 1));
   }
 }
 

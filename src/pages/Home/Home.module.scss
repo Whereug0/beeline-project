@@ -4,10 +4,10 @@
   display: flex;
   justify-content: center;
   border-radius: 20px;
-  padding: 50px 0;
+  // padding: 50px 0;
 }
 iframe {
-  border-radius: 20px;
+  // border-radius: 20px;
 }
 .App {
   display: flex;
@@ -25,13 +25,13 @@ video {
 }
 
 @media (max-width: 1200px) {
-  iframe {
-    width: 90%;
-    border-radius: 10px;
-  }
+  // iframe {
+  //   width: 90%;
+  //   border-radius: 10px;
+  // }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   iframe {
     max-height: 300px;
   }

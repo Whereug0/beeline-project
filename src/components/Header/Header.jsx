@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import BurgerMobile from "../BurgerIcon/BurgerIcon";
-import { ReactComponent as BeelineIcon } from "../../assets/icons/Beeline_Icon.svg";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import blackLogo from '../../assets/imgs/Logo-onblack-01.png';
 
 const Header = () => {
   const [isActiveBurgerMenu, setIsActiveBurgerMenu] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
           onClick={handleShowBurgerMenu}
         />
         <div className={styles.logo}>
-          <BeelineIcon className={styles.icon} />
+          <img src={blackLogo} className={styles.icon} />
         </div>
 
         <div className={styles.navMenu}>
