@@ -14,7 +14,7 @@ const AllVacancies = () => {
 
   // Состояния для выбранных фильтров
   const [selectedLocation, setSelectedLocation] = useState('Локация');
-  const [selectedSpecialization, setSelectedSpecialization] = useState('Дапартаменты');
+  const [selectedCategory, setSelectedCategory] = useState('Дапартаменты');
   const [selectedExpertise, setSelectedExpertise] = useState('Экспертность');
 
   // Получение данных о вакансиях, локациях и категориях
@@ -46,7 +46,7 @@ const AllVacancies = () => {
   };
 
   // Функция фильтрации вакансий
-  const filterVacancies = (vacancies, searchValue, selectedLocation, selectedSpecialization, selectedExpertise) => {
+  const filterVacancies = (vacancies, searchValue, selectedLocation, selectedCategory, selectedExpertise) => {
     if (!vacancies) return [];
 
     const searchLower = searchValue.toLowerCase();
@@ -61,15 +61,15 @@ const AllVacancies = () => {
       );
 
       const matchesLocation = selectedLocation === 'Локация' || vacancy.location.location === selectedLocation;
-      const matchesSpecialization = selectedSpecialization === 'Дапартаменты' || vacancy.specialization === selectedSpecialization;
+      const matchesCategory = selectedCategory === 'Дапартаменты' || vacancy.category.speciality === selectedCategory;
       const matchesExpertise = selectedExpertise === 'Экспертность' || translation[vacancy.job_type] === selectedExpertise;
 
-      return matchesSearch && matchesLocation && matchesSpecialization && matchesExpertise;
+      return matchesSearch && matchesLocation && matchesCategory && matchesExpertise;
     });
   };
 
   // Отфильтрованные вакансии
-  const filteredVacancies = filterVacancies(vacancies?.results || [], searchValue, selectedLocation, selectedSpecialization, selectedExpertise);
+  const filteredVacancies = filterVacancies(vacancies?.results || [], searchValue, selectedLocation, selectedCategory, selectedExpertise);
 
   // Обработчики изменений выбранных фильтров
   const handleLocationChange = (location) => {
@@ -77,8 +77,8 @@ const AllVacancies = () => {
     toggleActive(null); // Закрываем активный список после выбора
   };
 
-  const handleSpecializationChange = (specialization) => {
-    setSelectedSpecialization(specialization);
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
     toggleActive(null); // Закрываем активный список после выбора
   };
 
@@ -128,18 +128,18 @@ const AllVacancies = () => {
           </div>
           <div className={styles.select}>
             <button
-              className={`${styles.button} ${activeList === "specialization" ? styles.active : ""}`}
-              onClick={() => toggleActive("specialization")}
+              className={`${styles.button} ${activeList === "category" ? styles.active : ""}`}
+              onClick={() => toggleActive("category")}
             >
-              {selectedSpecialization}
-              <ArrowIcon className={`${styles.arrow} ${activeList === "specialization" ? styles.activeArrow : ""}`} />
+              {selectedCategory}
+              <ArrowIcon className={`${styles.arrow} ${activeList === "category" ? styles.activeArrow : ""}`} />
             </button>
-            {activeList === "specialization" && (
+            {activeList === "category" && (
               <div className={styles.sort_list}>
-                <p onClick={() => handleSpecializationChange('Дапартаменты')}>Все</p>
+                <p onClick={() => handleCategoryChange('Дапартаменты')}>Все</p>
                 {categories?.results?.length > 0 ? (
                   categories.results.map((category) => (
-                    <p key={category.id} onClick={() => handleSpecializationChange(category.speciality)}>{category.speciality}</p>
+                    <p key={category.id} onClick={() => handleCategoryChange(category.speciality)}>{category.speciality}</p>
                   ))
                 ) : (
                   <p>Департаментов нет</p>
