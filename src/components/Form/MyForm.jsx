@@ -2,19 +2,33 @@ import React from 'react';
 import styles from './MyForm.module.scss';
 import mobile from '../../assets/imgs/undraw_mobile_search_jxq5 1.png';
 import { useForm } from 'react-hook-form';
+import { useCreateFeedbackMutation } from '../../features/api/getApiSlice';
 
 const MyForm = () => {
+  const [createFeedback, { isLoading, error }] = useCreateFeedbackMutation();
+  
   const {
     register,
-    formState: {
-      errors,
-    },
-    handleSubmit
-  } = useForm()
+    formState: { errors },
+    handleSubmit,
+    reset
+  } = useForm();
+
+  const handleCreateFeedback = async (data) => {
+    try {
+      await createFeedback(data);
+      reset();
+    } catch (error) {
+      console.error("Ошибка при создании/обновлении сообщения:", error);
+      if (error.response && error.response.data) {
+        console.log("Дополнительная информация об ошибке:", error.response.data);
+      }
+    }
+  };
 
   const onSubmit = (data) => {
-    console.log(data)
-  }
+    handleCreateFeedback(data);
+  };
 
   return (
     <div className={styles.container}>
@@ -28,11 +42,11 @@ const MyForm = () => {
             <input
               type="text" 
               placeholder='ФИО'
-              {...register("fullName", {
+              {...register("name", {
                 required: true
               })}
             />
-            {errors?.fullName && <p>Это поле обязательно!</p>}
+            {errors?.name && <p>Это поле обязательно!</p>}
           </div>
           <div className={styles.inputWrapp}>
             <input
@@ -48,7 +62,7 @@ const MyForm = () => {
             <input
               type="number" 
               placeholder='Номер телефона'
-              {...register("number", {
+              {...register("phone", {
                 required: "Это поле обязательно!",
                 minLength: {
                   value: 10,
@@ -56,28 +70,29 @@ const MyForm = () => {
                 }
               })}
             />
-            {errors?.number && <p>{errors?.number?.message || ""}</p>}
+            {errors?.phone && <p>{errors?.phone?.message || ""}</p>}
           </div>
           <div className={styles.inputWrapp}>
             <input
               type="text" 
               placeholder='Комментарии'
-              {...register("text", {
+              {...register("feedback", {
                 required: "Это поле обязательно!",
                 minLength: {
                   value: 10,
-                  message: "Минимум 10 симловов"
+                  message: "Минимум 10 символов"
                 }
               })}
             />
-            {errors?.text && <p>{errors?.text?.message || ""}</p>}
+            {errors?.feedback && <p>{errors?.feedback?.message || ""}</p>}
           </div>
-          <button type='submit'>Отправить</button>
+          <button type='submit' disabled={isLoading}>Отправить</button>
+          {error && <p className={styles.error}>Произошла ошибка: {error.message}</p>}
         </form>
         <img src={mobile} alt="mobile" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MyForm
+export default MyForm;

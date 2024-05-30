@@ -19,10 +19,11 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        font-size: 24px;
+        font-size: 17px;
         font-weight: 500;
       }
     }
+    
   }
 
   .description {
@@ -60,6 +61,11 @@
     font-weight: 600;
     width: 45%;
   }
+}
+
+.cardLink{
+  color: black;
+  height: 250px;
 }
 @media (max-width: 1300px) {
   .card{

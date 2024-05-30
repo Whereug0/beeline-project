@@ -18,16 +18,19 @@ export const getApiSlice = createApi({
       query: () => `/category/speciality/`,
       provideTags: ["Categories"]
     }),
+    getVacandyId: builder.query({
+      query: (id) => `/vacancy/vacancies/${id}/`
+    }),
     createFeedback: builder.mutation({
       query: (body) => ({
-        url: `/feedback/feedback`,
+        url: `/feedback/feedback/`,
         method: 'POST',
         body
       }),
     }),
     createAnketa: builder.mutation({
       query: (body) => ({
-        url: `/anketa/anketas`,
+        url: `/anketa/anketas/`,
         method: 'POST',
         body
       }),
@@ -40,6 +43,7 @@ export const {
   useGetVacanciesQuery,
   useGetLocationsQuery,
   useGetCategoriesQuery,
+  useGetVacandyIdQuery,
 
   useCreateFeedbackMutation,
 

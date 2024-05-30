@@ -9,12 +9,18 @@ import { NavLink } from "react-router-dom";
 import {ROUTES} from '../../utils/routes'
 
 const Vacancies = () => {
-  const {data: vacancies, isLoading, error} = useGetVacanciesQuery()
+  const { data: vacancies, isLoading, error } = useGetVacanciesQuery();
 
   useEffect(() => {
-    Aos.init({duration:2000});
-  },[])
-  
+    Aos.init({ duration: 2000 });
+  }, []);
+
+  const translation = {
+    'expert': "Эксперт",
+    'carrier': "Старт карьеры",
+    'practic': "Стажёр"
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -23,22 +29,24 @@ const Vacancies = () => {
             Найди работу вместе с
             <span>
               Beeline
-              <div className={styles.line}/>
+              <div className={styles.line} />
             </span>
           </h1>
         </div>
         <div className={styles.cards_wrapp}>
-        {vacancies?.results?.length > 0 ? (
-            vacancies.results.slice(0,6).map((vacancy) => (
-              <CardItemVacancies 
-                key={vacancy.id}
-                title={vacancy.title}
-                salary={vacancy.salary}
-                description={vacancy.description}
-                location={vacancy.location.location}
-                format={vacancy.format}
-                type={vacancy.job_type}
-              />
+          {vacancies?.results?.length > 0 ? (
+            vacancies.results.slice(0, 6).map((vacancy) => (
+              <div key={vacancy.id} className={styles.cardContainer}>
+                  <CardItemVacancies
+                    id={vacancy.id}
+                    title={vacancy.title}
+                    salary={vacancy.salary}
+                    description={vacancy.description}
+                    location={vacancy.location.location}
+                    format={vacancy.format}
+                    type={translation[vacancy.job_type]}
+                  />
+              </div>
             ))
           ) : (
             <div>Вакансий нет</div>

@@ -6,18 +6,18 @@ import styles from "./AllVacancies.module.scss";
 import { useGetCategoriesQuery, useGetLocationsQuery, useGetVacanciesQuery } from "../../features/api/getApiSlice";
 
 const AllVacancies = () => {
-  // Состояние для управления активным списком (локация, специализация, экспертность)
+
   const [activeList, setActiveList] = useState(null);
 
-  // Состояние для значения поиска
+
   const [searchValue, setSearchValue] = useState('');
 
-  // Состояния для выбранных фильтров
+
   const [selectedLocation, setSelectedLocation] = useState('Локация');
   const [selectedCategory, setSelectedCategory] = useState('Дапартаменты');
   const [selectedExpertise, setSelectedExpertise] = useState('Экспертность');
 
-  // Получение данных о вакансиях, локациях и категориях
+
   const { data: vacancies, isLoading, error } = useGetVacanciesQuery();
   const { data: locations, isLoading: locationIsLoading, error: locationError } = useGetLocationsQuery();
   const { data: categories } = useGetCategoriesQuery();
@@ -28,17 +28,16 @@ const AllVacancies = () => {
     setActiveList(activeList === listName ? null : listName);
   };
 
-  // Прокрутка страницы к началу при загрузке компонента
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Обработчик изменения значения поиска
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
   };
 
-  // Перевод типов работ
+
   const translation = {
     'expert': "Эксперт",
     'carrier': "Старт карьеры",
@@ -74,17 +73,17 @@ const AllVacancies = () => {
   // Обработчики изменений выбранных фильтров
   const handleLocationChange = (location) => {
     setSelectedLocation(location);
-    toggleActive(null); // Закрываем активный список после выбора
+    toggleActive(null); 
   };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    toggleActive(null); // Закрываем активный список после выбора
+    toggleActive(null); 
   };
 
   const handleExpertiseChange = (expertise) => {
     setSelectedExpertise(expertise);
-    toggleActive(null); // Закрываем активный список после выбора
+    toggleActive(null); 
   };
 
   return (
@@ -169,6 +168,7 @@ const AllVacancies = () => {
           {filteredVacancies.length > 0 ? (
             filteredVacancies.map((vacancy) => (
               <CardItemVacancies
+                id={vacancy.id}
                 key={vacancy.id}
                 title={vacancy.title}
                 salary={vacancy.salary}

@@ -36,7 +36,7 @@ const MySwiper = () => {
           </span>
         </div>
         <Swiper
-          data-aos="flip-up"
+          data-aos="zoom-in-down"
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}

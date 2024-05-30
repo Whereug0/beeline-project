@@ -68,6 +68,7 @@
 
 }
 .submitBtn{
+  cursor: pointer;
   width: 100%;
   padding: 20px 10px;
   border: none;
@@ -81,6 +82,9 @@
   display: flex;
   justify-content: flex-end;
   margin-left: 10px;
+  .closeIcon{
+    cursor: pointer;
+  }
 }
 
 

@@ -1,0 +1,50 @@
+.container{
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.heading{
+  margin-bottom: 50px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  color: black;
+  border-radius: 20px;
+  .city{
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    p{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding-bottom: 18px;
+      padding-top: 35px;
+      width: 100%;
+      font-weight: 500;
+      font-size: 24px;
+    }
+  }
+}
+
+.vacancy_wrapp{
+  display: flex;
+  justify-content: center;
+}
