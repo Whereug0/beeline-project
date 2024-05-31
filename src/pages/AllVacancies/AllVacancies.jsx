@@ -41,7 +41,9 @@ const AllVacancies = () => {
   const translation = {
     'expert': "Эксперт",
     'carrier': "Старт карьеры",
-    'practic': "Стажёр"
+    'practic': "Стажёр",
+    'online': 'Удаленно',
+    'offline': 'В офисе',
   };
 
   // Функция фильтрации вакансий
@@ -174,7 +176,7 @@ const AllVacancies = () => {
                 salary={vacancy.salary}
                 description={vacancy.description}
                 location={vacancy.location.location}
-                format={vacancy.format}
+                format={translation[vacancy.format]}
                 type={translation[vacancy.job_type]}
               />
             ))
