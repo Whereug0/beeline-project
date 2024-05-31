@@ -125,7 +125,7 @@
     color: white;
     font-weight: 600;
     width: 300px;
-    padding: 15px 40px;
+    padding: 15px 20px;
     border-radius: 30px;
     border: none;
     cursor: pointer;
@@ -138,7 +138,7 @@
 
 
 .cards_wrapp{
-  margin: 100px 0;
+  margin: 60px 0;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -175,14 +175,22 @@
 }
 
 
-@media (max-width:1000px) {
+@media (max-width:1050px) {
   .selects_wrapp{
     flex-wrap: wrap;
     justify-content: center;
     button{
-    width: 200px;
+      width: 200px;
       font-size: 18px;
+      .arrow{
+        width: 18px;
+        height: 15px;
+      }
     }
+  }
+  .cards_wrapp{
+    display: flex;
+    flex-direction: column;
   }
   .heading{
     text-align: center;
@@ -222,7 +230,6 @@
   }
   .cards_wrapp{
     display: flex;
-    flex-direction: column;
     margin-bottom: 50px;
   }
 }

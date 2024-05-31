@@ -21,6 +21,17 @@ export const getApiSlice = createApi({
     getVacandyId: builder.query({
       query: (id) => `/vacancy/vacancies/${id}/`
     }),
+    getPhoto: builder.query({
+      query: () => `/history/history/`
+    }),
+    getMissions: builder.query({
+      query: () => `/mission/mission/`
+    }),
+    getValues: builder.query({
+      query: () => `/values/values/`
+    }),
+
+
     createFeedback: builder.mutation({
       query: (body) => ({
         url: `/feedback/feedback/`,
@@ -44,6 +55,9 @@ export const {
   useGetLocationsQuery,
   useGetCategoriesQuery,
   useGetVacandyIdQuery,
+  useGetPhotoQuery,
+  useGetMissionsQuery,
+  useGetValuesQuery,
 
   useCreateFeedbackMutation,
 

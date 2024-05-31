@@ -11,8 +11,12 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 import styles from "./MySwiper.module.scss";
+import { useGetPhotoQuery } from "../../features/api/getApiSlice";
 
 const MySwiper = () => {
+  const { data: photo, isLoading, error } = useGetPhotoQuery();
+
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -23,7 +27,7 @@ const MySwiper = () => {
         <div className={styles.heading} data-aos="zoom-in-down">
           <h1>
             Реализуй себя вместе с Beeline
-          <div className={styles.line}/>
+            <div className={styles.line} />
           </h1>
           <span>
             1 августа 1998 года был совершен первый звонок в GSM сети
@@ -53,34 +57,18 @@ const MySwiper = () => {
             modifier: 1,
             slideShadows: true,
           }}
-          pagination={true}
+          pagination={{ clickable: true }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
           className="mySwiper"
         >
-          <SwiperSlide className="slide6">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide7">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide8">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide1">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide2">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide3">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide4">
-            <div />
-          </SwiperSlide>
-          <SwiperSlide className="slide5">
-            <div />
-          </SwiperSlide>
+          {photo?.results.length > 0 ? (photo.results.map((item) => (
+            <SwiperSlide 
+              key={item.id} 
+              style={{ 
+                backgroundImage: `url(${item.photo})`,
+              }}
+            />
+          ))): (<div>Нет Фото</div>)}
         </Swiper>
       </div>
     </div>

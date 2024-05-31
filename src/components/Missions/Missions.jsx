@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import styles from "./Missions.module.scss";
 import CardItemMissions from "./CardItemMissions/CardItemMissions";
-import fist from '../../assets/icons/fist.svg';
-import hands from '../../assets/icons/hands.svg';
-import humans from '../../assets/icons/humans.svg';
-import communication from '../../assets/icons/communication.svg';
+
 
 import Aos from "aos";
 import 'aos/dist/aos.css';
+import { useGetMissionsQuery } from "../../features/api/getApiSlice";
 
 const Missions = () => {
+
+  const {data: missions, isLoading, error} = useGetMissionsQuery()
 
   useEffect(() => {
     Aos.init({duration:2000});
@@ -30,14 +30,12 @@ const Missions = () => {
           </span>
         </div>
         <div className={styles.cards_wrapp}>
-          <div className={styles.cards_box}>
-            <CardItemMissions img={hands} text="Клиентоцентричность"/>
-            <CardItemMissions img={fist} text="Ответственность"/>
-          </div>
-          <div className={styles.cards_box}>
-            <CardItemMissions img={humans} text="Сотрудничество"/>
-            <CardItemMissions img={communication} text="Вовлеченность"/>
-          </div>
+          {missions?.results?.length > 0 ? (
+            missions.results.map((mission) => (
+              <CardItemMissions key={mission.id} img={mission.icon} text={mission.block_text}/>
+            ))
+          ) : (<div>Миссий нет</div>)
+          }
         </div>
       </div>
     </div>

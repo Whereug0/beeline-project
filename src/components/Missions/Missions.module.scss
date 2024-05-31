@@ -47,11 +47,18 @@
 }
 
 .cards_wrapp{
-  display: flex;
+  // display: flex;
+  // width: 100%;
+  // align-items: center;
+  // justify-content: center;
+  // gap: 35px;
   width: 100%;
-  align-items: center;
+  display: grid;
   justify-content: center;
-  gap: 35px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 35px;
+  grid-row-gap: 35px;
 }
 
 .cards_box{

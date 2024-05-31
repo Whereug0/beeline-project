@@ -53,10 +53,11 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
         onSubmit={handleSubmit(onSubmit)}
         encType="multipart/form-data"
       >
+        <div className={styles.content_wrapp}>
         <div className={styles.icon_wrapp}>
           <img className={styles.closeIcon} src={closeIcon} alt="close" onClick={close} />
         </div>
-        <h2>Заявка на вакансию</h2>
+        <h1>Заявка на вакансию</h1>
         <div className={styles.input_wrapp}>
           <label htmlFor="surname">Фамилия</label>
           <input
@@ -135,6 +136,7 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
           {errors?.resume && <p>{errors?.resume?.message || ""}</p>}
         </div>
         <button className={styles.submitBtn} type="submit">Откликнуться</button>
+        </div>
       </form>
     </div>
   );

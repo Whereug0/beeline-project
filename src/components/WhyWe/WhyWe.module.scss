@@ -98,8 +98,10 @@
     }
   }
   .card{
+    gap: 10px;
     img{
-      width: 40%;
+      width: 70%;
+      height: 58px;
     }
     font-size: 1em;
   }
@@ -112,6 +114,6 @@
     grid-row-gap: 20px;
   }
   .card{
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 }

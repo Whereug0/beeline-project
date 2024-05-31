@@ -12,6 +12,7 @@ const BurgerMobile = (props) => {
 
   return (
     <div onClick={onClick} className={burgerMenuClasses}>
+    <span className={styles.line}></span>
       <BurgerMenu
         setIsActiveBurgerMenu={setIsActiveBurgerMenu}
         isActiveBurgerMenu={isActiveBurgerMenu}
