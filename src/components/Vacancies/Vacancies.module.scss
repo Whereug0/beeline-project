@@ -96,24 +96,26 @@
 .cards_wrapp{
   margin: 100px 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 22px;
-  grid-row-gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  .cardContainer{
+    width: 100%;
+  }
 }
 
 .all{
-  background-color: rgba(255, 204, 51, 1);
-  width: 300px;
-  color: black;
-  font-size: 30px;
-  height: 100%;
-  border-radius: 30px;
+  color: white;
+  font-size: 35px;
   text-align: center;
   font-weight: 600;
-  padding: 10px 30px;
-}
+  border-bottom: 7px solid white;
+  &:hover{
+    color: rgba(255, 204, 51, 1);
+    border-bottom: 7px solid rgba(255, 204, 51, 1);
+  }
+} 
 
 
 
@@ -138,7 +140,7 @@
   }
 }
 
-@media (max-width:1000px) {
+@media (max-width:1050px) {
   .cards_wrapp{
     display: flex;
     flex-direction: column;
@@ -180,7 +182,6 @@
   }
   .all {
     font-size: 20px;
-    width: 220px;
   }
 }
 

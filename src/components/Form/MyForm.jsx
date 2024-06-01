@@ -50,17 +50,22 @@ const MyForm = () => {
               type="text" 
               placeholder='ФИО'
               {...register("name", {
-                required: true
+                required: true,
+                maxLength: {
+                  value: 50,
+                  message: "Максимум 50 символов"
+                },
               })}
             />
-            {errors?.name && <p>Это поле обязательно!</p>}
+            {errors?.name && <p>{errors?.name?.message || ""}</p>}
           </div>
           <div className={styles.inputWrapp}>
             <input
               type="email" 
               placeholder='Email'
               {...register("email", {
-                required: true
+                required: true,
+
               })}
             />
             {errors?.email && <p>Это поле обязательно!</p>}
