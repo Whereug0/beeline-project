@@ -30,6 +30,10 @@ export const getApiSlice = createApi({
     getValues: builder.query({
       query: () => `/values/values/`
     }),
+    getWhyWe: builder.query({
+      query: () => `/why_we/why_we/`
+    }),
+
 
 
     createFeedback: builder.mutation({
@@ -58,6 +62,7 @@ export const {
   useGetPhotoQuery,
   useGetMissionsQuery,
   useGetValuesQuery,
+  useGetWhyWeQuery,
 
   useCreateFeedbackMutation,
 

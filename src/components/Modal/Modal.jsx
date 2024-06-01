@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Modal.module.scss";
 import closeIcon from "../../assets/icons/close.svg";
 import { useForm } from "react-hook-form";
@@ -7,6 +7,8 @@ import { useCreateAnketaMutation } from "../../features/api/getApiSlice";
 
 const Modal = ({ active, setActive, close, vacancyId }) => {
   const [createAnketa] = useCreateAnketaMutation();
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const {
     register,
@@ -20,7 +22,7 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
       const formData = new FormData();
       for (const key in data) {
         if (key === 'resume') {
-          formData.append(key, data[key][0]); // Добавляем первый файл из FileList
+          formData.append(key, data[key][0]); 
         } else {
           formData.append(key, data[key]);
         }
@@ -28,18 +30,24 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
       formData.append('vacancy', vacancyId);
   
       await createAnketa(formData);
+      setSuccessMessage('Вы откликнулись на вакансию успешно!');
+      setErrorMessage('');
       reset();
+      setTimeout(() => {
+        setActive(false);
+      }, 1500);
     } catch (error) {
       console.error("Ошибка при создании/обновлении сообщения:", error);
       if (error.response && error.response.data) {
         console.log("Дополнительная информация об ошибке:", error.response.data);
       }
+      setErrorMessage('Упс, что-то пошло не так');
+      setSuccessMessage('');
     }
   };
 
   const onSubmit = (data) => {
     handleCreateAnketa(data);
-    setActive(false)
   };
 
   return (
@@ -135,6 +143,8 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
           />
           {errors?.resume && <p>{errors?.resume?.message || ""}</p>}
         </div>
+        {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
+        {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
         <button className={styles.submitBtn} type="submit">Откликнуться</button>
         </div>
       </form>

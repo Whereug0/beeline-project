@@ -28,6 +28,19 @@
   background: rgba(255, 255, 255, 1);
   color: black;
   border-radius: 20px;
+  h3{
+    font-size: 30px;
+  }
+  li{
+    list-style-type: disc;
+    font-size: 20px;
+  }
+  ul{
+    padding:0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   .city{
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -46,5 +59,110 @@
 
 .vacancy_wrapp{
   display: flex;
+  p{
+    color: blue;
+    span{
+      color: black;
+    }
+  }
+  .vacancy_name{
+    h2{
+      font-size: 36px;
+    }
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+
+.conditions_wrapp{
+  padding-bottom: 25px;
+}
+
+
+.info_wrapp{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 30px 60px 30px;
+  width: 100%;
+  .description{
+    font-size: 20px;
+  }
+  .duties_wrapp, .requirements_wrapp, .benefits_wrapp, .conditions{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.sbmBtn_wrapp{
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  button{
+    color: black;
+    background: rgba(255, 204, 51, 1);
+    border: none;
+    border-radius: 30px;
+    width: 90%;
+    height: 100px;
+    font-size: 28px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width: 780px) {
+  .vacancy_wrapp{
+    img{
+      width: 63px;
+      height: 63px;
+    }
+    .vacancy_name{
+      h2{
+        font-size: 18px;
+      }
+      p{
+        font-size: 15px;
+      }
+    }
+  }
+  .info_wrapp{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+    gap: 20px;
+    h3{
+      font-size: 18px;
+    }
+    .description{
+      font-size: 12px;
+    }
+    .duties_wrapp, .requirements_wrapp, .benefits_wrapp, .conditions{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .card{
+    ul{
+      padding: 0 15px;
+    }
+    li{
+      font-size: 12px;
+    }
+  }
+
+  .sbmBtn_wrapp{
+    button{
+      height: 54px;
+      font-size: 20px;
+    }
+  }
 }

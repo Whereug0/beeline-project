@@ -20,7 +20,7 @@ const AllVacancies = () => {
 
   const { data: vacancies, isLoading, error } = useGetVacanciesQuery();
   const { data: locations, isLoading: locationIsLoading, error: locationError } = useGetLocationsQuery();
-  const { data: categories } = useGetCategoriesQuery();
+  const { data: categories, isLoading: categoriesIsLoading, error: categoriesError } = useGetCategoriesQuery();
   console.log(vacancies);
 
   // Функция для переключения активного списка
@@ -32,6 +32,9 @@ const AllVacancies = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (isLoading || locationIsLoading || categoriesIsLoading) return <p>Loading...</p>;
+  if (error || locationError || categoriesError) return <p>Error: {error.message}</p>;
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);

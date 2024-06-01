@@ -10,7 +10,7 @@ const AppRoutes = () => {
     <Routes>
       <Route index element={<Home/>}/>
       <Route path={ROUTES.VACANCIES} element={<AllVacancies/>}/>
-      <Route path={ROUTES.SINGLE_VACANCY} element={<SingleVacancy />}/>
+      <Route path={`/vacancy/:id`} element={<SingleVacancy />}/>
     </Routes>
   )
 }

@@ -8,7 +8,7 @@ import Modal from "../../Modal/Modal";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { NavLink } from "react-router-dom";
-import { ROUTES } from "../../../utils/routes";
+
 
 const CardItemVacancies = (props) => {
   const {
@@ -43,7 +43,7 @@ const CardItemVacancies = (props) => {
   return (
     <>
       <div className={styles.card} data-aos="flip-left">
-      <NavLink to={ROUTES.SINGLE_VACANCY} className={styles.cardLink}>
+      <NavLink to={`/vacancy/${id}`} className={styles.cardLink}>
         <div className={styles.vacancy_wrapp}>
           <img className={styles.bagImg} src={bag} alt="bag" />
           <div className={styles.vacancy_name}>

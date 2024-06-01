@@ -15,6 +15,9 @@ const Vacancies = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   const translation = {
     'expert': "Эксперт",
     'carrier': "Старт карьеры",

@@ -15,6 +15,10 @@ const Missions = () => {
     Aos.init({duration:2000});
   },[])
 
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  
   return (
     <div className={styles.container}>
       <div className={styles.content}>

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './MyForm.module.scss';
 import mobile from '../../assets/imgs/undraw_mobile_search_jxq5 1.png';
 import { useForm } from 'react-hook-form';
 import { useCreateFeedbackMutation } from '../../features/api/getApiSlice';
 
 const MyForm = () => {
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const [createFeedback, { isLoading, error }] = useCreateFeedbackMutation();
   
   const {
@@ -17,12 +20,16 @@ const MyForm = () => {
   const handleCreateFeedback = async (data) => {
     try {
       await createFeedback(data);
+      setSuccessMessage('Ваша заявка принята!');
+      setErrorMessage('');
       reset();
     } catch (error) {
       console.error("Ошибка при создании/обновлении сообщения:", error);
       if (error.response && error.response.data) {
         console.log("Дополнительная информация об ошибке:", error.response.data);
       }
+      setErrorMessage('Упс, что-то пошло не так');
+      setSuccessMessage('');
     }
   };
 
@@ -64,9 +71,13 @@ const MyForm = () => {
               placeholder='Номер телефона'
               {...register("phone", {
                 required: "Это поле обязательно!",
+                maxLength: {
+                  value: 10,
+                  message: "Некорректный номер телефона. Пример: 0700123456"
+                },
                 minLength: {
                   value: 10,
-                  message: "Некорректный номер телефона"
+                  message: "Некорректный номер телефона, минимум 10 цифр"
                 }
               })}
             />
@@ -86,6 +97,8 @@ const MyForm = () => {
             />
             {errors?.feedback && <p>{errors?.feedback?.message || ""}</p>}
           </div>
+          {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
+          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
           <button type='submit' disabled={isLoading}>Отправить</button>
           {error && <p className={styles.error}>Произошла ошибка: {error.message}</p>}
         </form>

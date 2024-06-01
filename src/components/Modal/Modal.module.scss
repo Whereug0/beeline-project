@@ -73,7 +73,7 @@
     outline: none;
     color: rgba(131, 145, 161, 1);
     font-size: 15px;
-    box-sizing: border-box; /* Добавлено для предотвращения выхода за границы */
+    box-sizing: border-box; 
   }
   textarea{
     height: 120px;
@@ -90,17 +90,23 @@
   font-weight: 600;
   font-size: 20px;
   background: rgba(255, 204, 51, 1);
-  box-sizing: border-box; /* Добавлено для предотвращения выхода за границы */
+  box-sizing: border-box; 
 }
 
 .icon_wrapp{
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  // margin-left: 10px;
   .closeIcon{
     cursor: pointer;
   }
+}
+.successMessage{
+  color: green;
+}
+
+.errorMessage{
+  color: red;
 }
 
 @media (max-width: 780px) {
@@ -110,11 +116,8 @@
 }
 
 @media (max-height: 900px) {
-  // .modal__content{
-  //   margin-top: 40px;
-  // }
   .content_wrapp{
-    height: 85vh;
+    height: 90vh;
   }
 }
 
