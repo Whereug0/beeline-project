@@ -1,40 +1,38 @@
 .video_wrapp {
+  max-width: 1440px;
   width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
-  border-radius: 20px;
   padding-bottom: 60px;
+  video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 20px;
+
+  }
 }
 
-.App {
-  display: flex;
+
+.container{
+  // width: 1440px;
+  align-items: center;
   flex-direction: column;
+  display: flex;
   justify-content: center;
 }
 
 
 @media (max-width: 1200px) {
-  // iframe {
-  //   width: 90%;
-  //   border-radius: 10px;
-  // }
-}
-
-@media (max-width: 800px) {
-  iframe {
-    max-height: 300px;
+  .video_wrapp{
+    padding: 50px 20px;
   }
 }
 
-@media (max-width: 500px) {
-  iframe {
-    max-height: 250px;
-  }
-}
-
-@media (max-width: 450px) {
-  iframe {
-    height: 200px;
+@media (max-width: 900px) {
+  .video_wrapp{
+    padding-top: 0;
   }
 }

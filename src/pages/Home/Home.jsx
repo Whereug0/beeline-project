@@ -1,16 +1,18 @@
-import React from 'react'
-import styles from './Home.module.scss';
-import MySwiper from '../../components/MySwiper/MySwiper';
-import Values from '../../components/Values/Values';
-import Missions from '../../components/Missions/Missions';
-import Team from '../../components/Team/Team';
-import WhyWe from '../../components/WhyWe/WhyWe';
-import Vacancies from '../../components/Vacancies/Vacancies';
-import MyForm from '../../components/Form/MyForm';
-
-
+import React from "react";
+import styles from "./Home.module.scss";
+import MySwiper from "../../components/MySwiper/MySwiper";
+import Values from "../../components/Values/Values";
+import Missions from "../../components/Missions/Missions";
+import Team from "../../components/Team/Team";
+import WhyWe from "../../components/WhyWe/WhyWe";
+import Vacancies from "../../components/Vacancies/Vacancies";
+import MyForm from "../../components/Form/MyForm";
+import { useGetVideoQuery } from "../../features/api/getApiSlice";
 
 const Home = () => {
+  const { data: video, isLoading, error } = useGetVideoQuery();
+  console.log(video);
+
   return (
     <div className={styles.container}>
       <MySwiper />
@@ -21,10 +23,18 @@ const Home = () => {
       <Vacancies />
       <MyForm />
       <div className={styles.video_wrapp}>
-        <iframe width="1440" height="600" src="https://www.youtube.com/embed/BzgLprGNU8I" title="Обзор головного офиса Beeline" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        {video?.results?.length > 0 ? (
+          video.results.map((video) => (
+            <video controls>
+              <source src={video.video} />
+            </video>
+          ))
+        ) : (
+          <div>видео нет</div>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

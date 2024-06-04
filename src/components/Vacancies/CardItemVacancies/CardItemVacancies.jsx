@@ -62,7 +62,7 @@ const CardItemVacancies = (props) => {
         <div className={styles.conditions_wrapp}>
           <div className={styles.conditions}>
             <p className={styles.salary}>
-              Зарплата - <span>{salary} сомов</span>
+              Зарплата - <span>{salary} сом</span>
             </p>
             <p>{format}</p>
           </div>

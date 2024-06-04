@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./MyFooter.module.scss";
-import inst from "../../assets/icons/instagram.svg";
+import inst from "../../assets/icons/inst.svg";
 import tiktok from "../../assets/icons/tiktok.svg";
-import vk from "../../assets/icons/vk.svg";
-import whatsapp from "../../assets/icons/whatsapp.svg";
-import mail from '../../assets/icons/mail.svg';
-import phone from '../../assets/icons/phone_android.svg';
-import logo from '../../assets/icons/Beeline_Icon.svg'
-
+import vk from "../../assets/icons/ic_vk.svg.svg";
+import whatsapp from "../../assets/icons/wa.svg.svg";
+import mail from "../../assets/icons/mail.svg";
+import blackLogo from "../../assets/imgs/Logo-onblack-01.png";
+import phone from "../../assets/icons/phone_android.svg";
+import youtube from "../../assets/icons/ic_yotube.svg.svg";
+import twitter from "../../assets/icons/twitter.svg";
+import facebook from "../../assets/icons/ic_fb.svg.svg";
 const MyFooter = () => {
   return (
     <footer className={styles.container}>
@@ -54,10 +56,35 @@ const MyFooter = () => {
         </div>
         <div className={styles.media_contacts}>
           <div className={styles.media_wrapp}>
-            <img src={inst} alt="inst" />
-            <img src={tiktok} alt="tiktok" />
-            <img src={vk} alt="vk" />
-            <img src={whatsapp} alt="whatsapp" />
+            <a
+              href="https://www.instagram.com/beeline_kyrgyzstan/"
+              target="_blank"
+            >
+              <img src={inst} alt="inst" />
+            </a>
+
+            <a href="https://vm.tiktok.com/ZSJD2aSBd/" target="_blank">
+             <img src={tiktok} alt="tiktok" />
+            </a>
+            <a href="https://www.youtube.com/channel/UCFfbciGMeZbl6rL69VOC2gQ" target="_blank">
+              <img src={youtube} alt="youtube" />
+            </a>
+
+            <a href="https://vk.com/beelinekg" target="_blank">
+              <img src={vk} alt="vk" />
+            </a>
+
+            <a href="https://x.com/beelinekg" target="_blank">
+              <img src={twitter} alt="x.com" />
+            </a>
+
+            <a href="https://api.whatsapp.com/send/?phone=996777006611&text&type=phone_number&app_absent=0" target="_blank">
+              <img src={whatsapp} alt="whatsapp" />
+            </a>
+
+            <a href="https://www.facebook.com/beeline.kg/" target="_blank">
+              <img src={facebook} alt="facebook" />
+            </a>
           </div>
           <div className={styles.contacts_wrapp}>
             <div className={styles.contact}>
@@ -68,13 +95,13 @@ const MyFooter = () => {
               <img src={phone} alt="phone" />
               <p>*611 справочная</p>
             </div>
-            <div style={{width: "238px"}} className={styles.contact}>
+            <div style={{ width: "238px" }} className={styles.contact}>
               <div>Для оператора других сетей +996 (775)-58-0611</div>
             </div>
           </div>
         </div>
         <div className={styles.logo}>
-          <img src={logo} alt="logo" className={styles.icon}/>
+          <img src={blackLogo} alt="logo" className={styles.icon} />
           <p>© Beeline 2024</p>
         </div>
       </div>

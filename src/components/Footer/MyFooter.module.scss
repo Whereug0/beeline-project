@@ -33,7 +33,12 @@
 
 .media_wrapp{
   display: flex;
-  gap: 30px;
+  gap: 25px;
+  img{
+    cursor: pointer;
+    width: 32px;
+    height: 32px
+  };
 }
 
 .media_contacts{
@@ -56,14 +61,14 @@
 
 .logo{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  gap: 15px;
+  gap: 75px;
   margin-bottom: 26px;
 }
 .icon{
-  width: 35px;
-  height: 35px;
+  width: 146px;
+  height: 44px;
 }
 
 @media (max-width: 1000px){
@@ -94,6 +99,15 @@
     align-items: center;
     gap: 40px;
     flex-direction: column;
+  }
+}
+
+@media (max-width:1200px) {
+  .media_contacts{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
 }
 
@@ -130,6 +144,27 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      .contact{
+        justify-content: center;
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+  }
+  .logo{
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .media_wrapp{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    img{
+      width: 24px;
+      height: 24px;
     }
   }
 }

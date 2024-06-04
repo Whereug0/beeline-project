@@ -33,8 +33,9 @@ export const getApiSlice = createApi({
     getWhyWe: builder.query({
       query: () => `/why_we/why_we/`
     }),
-
-
+    getVideo: builder.query({
+      query: () => `/footer_video/footer_video/`
+    }),
 
     createFeedback: builder.mutation({
       query: (body) => ({
@@ -63,6 +64,7 @@ export const {
   useGetMissionsQuery,
   useGetValuesQuery,
   useGetWhyWeQuery,
+  useGetVideoQuery,
 
   useCreateFeedbackMutation,
 
