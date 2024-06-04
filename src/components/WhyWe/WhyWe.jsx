@@ -30,7 +30,7 @@ const WhyWe = () => {
         <div className={styles.cards_wrapp}>
           {items?.results?.length > 0 ? (
             items.results.map((item) => (
-              <div className={styles.card} data-aos="flip-up">
+              <div key={item.id} className={styles.card} data-aos="flip-up">
                 <img src={item.icon} alt="head" />
                 <p>{item.block_text}</p>
               </div>

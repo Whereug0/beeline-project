@@ -17,7 +17,6 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
   };
 
 
-
   const {
     register,
     formState: { errors },
@@ -139,6 +138,7 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
           <div className={styles.input_wrapp}>
             <label htmlFor="motivation_letter">Сопроводительное письмо</label>
             <textarea
+              
               type="text"
               {...register("motivation_letter", {
                 required: "Это поле обязательно!",
@@ -165,10 +165,10 @@ const Modal = ({ active, setActive, close, vacancyId }) => {
                   required: "Это поле обязательно!",
                 })}
               />
-              <span>
+              {/* <span>
                 <img src={fileIcon} alt="fileIcon" />
                 {selectedFile ? selectedFile.name : "Прикрепить файл"}
-              </span>
+              </span> */}
             </label>
             {errors?.resume && <p>{errors?.resume?.message || ""}</p>}
           </div>

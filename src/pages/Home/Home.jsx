@@ -11,7 +11,7 @@ import { useGetVideoQuery } from "../../features/api/getApiSlice";
 
 const Home = () => {
   const { data: video, isLoading, error } = useGetVideoQuery();
-  console.log(video);
+
 
   return (
     <div className={styles.container}>

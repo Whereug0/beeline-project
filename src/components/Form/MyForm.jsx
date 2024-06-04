@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './MyForm.module.scss';
 import mobile from '../../assets/imgs/undraw_mobile_search_jxq5 1.png';
 import { useForm } from 'react-hook-form';
 import { useCreateFeedbackMutation } from '../../features/api/getApiSlice';
+import fileIcon from "../../assets/icons/attach_file_white.svg";
 
 const MyForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [selectedFile, setSelectedFile] = useState('');
+  const [value, setValue] = useState('');
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    console.log('File selected:', file);
+  };
+
+  
 
   const [createFeedback, { isLoading, error }] = useCreateFeedbackMutation();
   
@@ -19,7 +29,16 @@ const MyForm = () => {
 
   const handleCreateFeedback = async (data) => {
     try {
-      await createFeedback(data);
+      const formData = new FormData();
+      for (const key in data) {
+        if (key === "resume") {
+          formData.append(key, data[key][0]);
+        } else {
+          formData.append(key, data[key]);
+        }
+      }
+      console.log(formData)
+      await createFeedback(formData);
       setSuccessMessage('Ваша заявка принята!');
       setErrorMessage('');
       reset();
@@ -32,6 +51,16 @@ const MyForm = () => {
       setSuccessMessage('');
     }
   };
+  useEffect(() => {
+    let timer;
+    if (successMessage || errorMessage) {
+      timer = setTimeout(() => {
+        setSuccessMessage("");
+        setErrorMessage("");
+      }, 5000); // 5 секунд
+    }
+    return () => clearTimeout(timer);
+  }, [successMessage, errorMessage]);
 
   const onSubmit = (data) => {
     handleCreateFeedback(data);
@@ -40,7 +69,7 @@ const MyForm = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <form action="" onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form} encType="multipart/form-data">
           <div className={styles.heading}>
             <h2>Не нашли подходящую вакансию?</h2>
             <p>Расскажи о себе и мы рассмотрим твою кандидатуру</p>
@@ -101,6 +130,26 @@ const MyForm = () => {
               })}
             />
             {errors?.feedback && <p>{errors?.feedback?.message || ""}</p>}
+          </div>
+          <div className={styles.file_wrapp}>
+            <label htmlFor="file" className={styles["input-file"]}>
+              <input
+                className={styles.file_input}
+                id="file"
+                name="resume"
+                onChange={handleFileChange}
+                accept=".jpg, .jpeg, .png, .svg, .pdf, .docs, .DOCX"
+                type="file"
+                {...register("resume", {
+                  required: "Это поле обязательно!",
+                })}
+              />
+              {/* <span>
+                <img src={fileIcon} alt="fileIcon" />
+                {selectedFile ? selectedFile.name : "Прикрепить файл"}
+              </span> */}
+            </label>
+            {errors?.resume && <p>{errors?.resume?.message || ""}</p>}
           </div>
           {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
           {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
