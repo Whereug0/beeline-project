@@ -103,10 +103,15 @@ input[type="number"] {
   }
 }
 
-// .input-file {
-// 	position: relative;
-// 	display: inline-block;
-// }
+.input-file {
+	display: flex;
+  flex-direction: column;
+  gap: 10px;
+  span{
+    font-size: 20px;
+  }
+}
+
 // .input-file span {
 // 	position: relative;
 // 	display: flex;
@@ -188,6 +193,7 @@ input[type="number"] {
 
 @media (max-width: 550px) {
 
+
   .heading {
     text-align: start;
     margin-bottom: 10px;
@@ -222,6 +228,15 @@ input[type="number"] {
     img {
       width: 35%;
       height: 40%;
+    }
+  }
+  .input-file {
+    span{
+      font-size: 15px;
+    }
+    
+    input{
+      padding: 0 !important;
     }
   }
 }

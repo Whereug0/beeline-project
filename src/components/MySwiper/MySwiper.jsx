@@ -29,8 +29,11 @@ const MySwiper = () => {
       <div className={styles.content}>
         <div className={styles.heading} data-aos="zoom-in-down">
           <h1>
-            Реализуй себя вместе с Beeline
-            <div className={styles.line} />
+            Реализуй себя вместе с <span>
+              Beeline
+              <div className={styles.line} />
+            </span>
+
           </h1>
           <span>
             1 августа 1998 года был совершен первый звонок в GSM сети

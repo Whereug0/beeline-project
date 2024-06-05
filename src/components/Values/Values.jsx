@@ -23,8 +23,10 @@ const Values = () => {
       <div className={styles.content}>
         <div className={styles.heading} data-aos="zoom-in-down">
           <h1>
-            Наши ценности
-            <div className={styles.line} />
+            Наши <span>
+              ценности
+              <div className={styles.line} />
+            </span>
           </h1>
           <span>
             В Beeline все начинается с наших клиентов. Наш новаторский дух

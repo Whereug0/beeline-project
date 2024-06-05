@@ -133,6 +133,7 @@ const MyForm = () => {
           </div>
           <div className={styles.file_wrapp}>
             <label htmlFor="file" className={styles["input-file"]}>
+              <span>Резюме: </span>
               <input
                 className={styles.file_input}
                 id="file"

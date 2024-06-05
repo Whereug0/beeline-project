@@ -22,8 +22,10 @@ const Team = () => {
         <div className={styles.heading} data-aos='zoom-in-down'>
           <img className={styles.ball} src={ball} alt="ball" />
           <h1>
-            Наша команда
-            <div className={styles.line}/>
+            Наша <span>
+              команда
+              <div className={styles.line}/> 
+            </span>
           </h1>
           <img className={styles.ball} src={ball} alt="ball" />
         </div>

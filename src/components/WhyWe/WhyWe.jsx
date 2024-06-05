@@ -23,8 +23,10 @@ const WhyWe = () => {
       <div className={styles.content}>
         <div className={styles.heading} data-aos="zoom-in-down">
           <h1>
-            Почему мы?
-            <div className={styles.line}/>
+            Почему <span>мы 
+              <div className={styles.line}/>
+            </span>?
+            
           </h1>
         </div>
         <div className={styles.cards_wrapp}>

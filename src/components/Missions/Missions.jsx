@@ -24,8 +24,9 @@ const Missions = () => {
       <div className={styles.content}>
         <div className={styles.heading} data-aos='zoom-in-down'>
           <h1>
-            Наша миссия
-            <div className={styles.line}/>
+            Наша <span>миссия 
+              <div className={styles.line}/>
+            </span>
           </h1>
           <span>
             Делая связь частью жизни, мы открываем доступ к информации, общению

@@ -26,19 +26,22 @@
     font-size: 3em;
     margin-top: 80px;
     margin-bottom: 35px;
-    position: relative;
+    span{
+      position: relative;
+      .line {
+        z-index: -5;
+        position: absolute;
+        top: 65%; /* Вертикально центрирует линию относительно заголовка */
+        left: -2%;
+        right: 0;
+        margin: auto; /* Центрирует линию горизонтально */
+        background-color: rgba(255, 204, 51, 1);
+        width: 104%; /* Ширина линии относительно контейнера */
+        height: 14px; /* Фиксированная высота линии */
+      }
+    }
   }
-  .line {
-    z-index: -5;
-    position: absolute;
-    top: 65%; /* Вертикально центрирует линию относительно заголовка */
-    left: -2%;
-    right: 0;
-    margin: auto; /* Центрирует линию горизонтально */
-    background-color: rgba(255, 204, 51, 1);
-    width: 104%; /* Ширина линии относительно контейнера */
-    height: 14px; /* Фиксированная высота линии */
-  }
+
 }
 
 .cards_wrapp{
@@ -73,6 +76,11 @@
     h1{
       margin-top: 20px;
       font-size: 2em;
+      span{
+        .line{
+          height: 7px;
+        }
+      }
     }
   }
 }
