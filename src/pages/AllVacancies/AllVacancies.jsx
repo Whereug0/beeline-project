@@ -95,7 +95,10 @@ const AllVacancies = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.heading} data-aos="zoom-in-down">
-          <h1>Вакансии</h1>
+          <h1>
+            Вакансии
+            <div className={styles.line} />
+          </h1>
           <div className={styles.search_wrapp}>
             <div className={styles.input_box}>
               <img src={searchIcon} alt="searchIcon" />

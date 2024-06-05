@@ -17,6 +17,22 @@
 
 .heading{
   margin-bottom: 50px;
+  h1{
+    font-weight: 700;
+    font-size: 45px;
+    position: relative;
+  }
+  .line {
+    z-index: -5;
+    position: absolute;
+    top: 65%; /* Вертикально центрирует линию относительно заголовка */
+    left: -2%;
+    right: 0;
+    margin: auto; /* Центрирует линию горизонтально */
+    background-color: rgba(255, 204, 51, 1);
+    width: 104%; /* Ширина линии относительно контейнера */
+    height: 14px; /* Фиксированная высота линии */
+  }
 }
 .card{
   display: flex;

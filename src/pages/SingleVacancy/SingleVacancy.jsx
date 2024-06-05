@@ -36,7 +36,10 @@ const SingleVacancy = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.heading}>
-            <h1>О вакансии</h1>
+            <h1>
+              О вакансии
+              <div className={styles.line} />
+            </h1>
           </div>
           <div className={styles.card}>
             <div className={styles.city}>
